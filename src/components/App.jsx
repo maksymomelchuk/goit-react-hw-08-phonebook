@@ -13,17 +13,21 @@ import { RegisterPage } from 'pages/RegisterPage';
 import { PrivateRoute } from './PrivateRoute';
 import { Contacts } from 'pages/Contacts';
 import { LoginPage } from 'pages/LoginPage';
+import { useAuth } from 'hooks/useAuth';
+import { refreshUser } from 'redux/auth/operations';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectFilter);
+  const { isRefreshing } = useAuth();
+  console.log('isRefreshing', isRefreshing);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <p>Refreshing user</p>
+  ) : (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
