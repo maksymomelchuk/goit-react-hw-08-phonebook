@@ -4,7 +4,15 @@ import { UserMenu } from 'components/UserMenu/UserMenu';
 
 export const AppBar = () => {
   return (
-    <header style={{ display: 'flex', padding: 20 }}>
+    <header
+      style={{
+        display: 'flex',
+        padding: 20,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 100,
+      }}
+    >
       <Navigation />
       <UserMenu />
       <AuthNav />

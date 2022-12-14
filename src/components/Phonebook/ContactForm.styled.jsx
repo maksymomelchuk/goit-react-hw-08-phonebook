@@ -5,13 +5,16 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-
+  width: 300px;
+  margin: 0px auto;
   margin-bottom: 20px;
 `;
 
 const StyledLabel = styled.label`
+  align-self: flex-end;
   font-size: 18px;
   font-weight: 500;
+  /* width: 100%; */
 `;
 
 const StyledInput = styled.input`

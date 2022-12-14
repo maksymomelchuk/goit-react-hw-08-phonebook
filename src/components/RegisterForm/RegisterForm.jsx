@@ -1,5 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/auth/operations';
+import {
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+  StyledButton,
+} from 'components/Phonebook/ContactForm.styled';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -17,20 +23,20 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handlerSubmit}>
-      <label>
+    <StyledForm autoComplete="off" onSubmit={handlerSubmit}>
+      <StyledLabel>
         Username
-        <input type="text" name="name" />
-      </label>
-      <label>
+        <StyledInput type="text" name="name" />
+      </StyledLabel>
+      <StyledLabel>
         Email
-        <input type="email" name="email" />
-      </label>
-      <label>
+        <StyledInput type="email" name="email" />
+      </StyledLabel>
+      <StyledLabel>
         Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+        <StyledInput type="password" name="password" />
+      </StyledLabel>
+      <StyledButton type="submit">Register</StyledButton>
+    </StyledForm>
   );
 };

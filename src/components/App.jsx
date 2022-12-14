@@ -1,11 +1,6 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { selectContacts } from 'redux/contacts/selectors';
-import { selectFilter } from 'redux/filter/selectors';
 import { Route, Routes } from 'react-router-dom';
-import Filter from './Filter/Filter';
-import { ContactForm } from './Phonebook/ContactForm';
-import { fetchContacts } from 'redux/contacts/operations';
 import { Layout } from './Layout';
 import { HomePage } from './HomePage/HomePage';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -19,7 +14,6 @@ import { refreshUser } from 'redux/auth/operations';
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
-  console.log('isRefreshing', isRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
