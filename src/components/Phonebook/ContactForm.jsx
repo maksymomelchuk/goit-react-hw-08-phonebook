@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 
@@ -32,7 +32,6 @@ const ContactForm = () => {
 
   return (
     <>
-      <ToastContainer />
       <StyledForm onSubmit={handlerOnSubmit}>
         <StyledLabel>
           Name

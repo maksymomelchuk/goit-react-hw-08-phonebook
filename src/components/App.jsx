@@ -1,11 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Layout } from './Layout';
 import { HomePage } from './HomePage/HomePage';
 import { RestrictedRoute } from './RestrictedRoute';
-import { RegisterPage } from 'pages/RegisterPage';
 import { PrivateRoute } from './PrivateRoute';
+import { RegisterPage } from 'pages/RegisterPage';
 import { Contacts } from 'pages/Contacts';
 import { LoginPage } from 'pages/LoginPage';
 import { useAuth } from 'hooks/useAuth';
@@ -23,6 +25,7 @@ export const App = () => {
     <p>Refreshing user</p>
   ) : (
     <div>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -51,6 +54,7 @@ export const App = () => {
             }
           />
         </Route>
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );

@@ -1,6 +1,9 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+
+const notify = msg => toast(msg, { type: 'error' });
 
 export const fetchAPI = async () => {
   const { data } = await axios.get('/contacts');
@@ -23,14 +26,21 @@ export const changeAPI = async id => {
 };
 
 export const signUpAPI = async user => {
-  console.log(user);
-  const { data } = await axios.post('/users/signup', user);
-  return data;
+  try {
+    const { data } = await axios.post('/users/signup', user);
+    return data;
+  } catch (error) {
+    notify('User with same email already registered');
+  }
 };
 
 export const logInAPI = async user => {
-  const { data } = await axios.post('/users/login', user);
-  return data;
+  try {
+    const { data } = await axios.post('/users/login', user);
+    return data;
+  } catch (error) {
+    notify('Login or password is incorrect');
+  }
 };
 
 export const logOutAPI = async () => {
