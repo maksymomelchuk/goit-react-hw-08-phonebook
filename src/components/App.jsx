@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useEffect, lazy } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,8 +12,6 @@ import { Contacts } from 'pages/Contacts';
 import { LoginPage } from 'pages/LoginPage';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
-
-// const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
