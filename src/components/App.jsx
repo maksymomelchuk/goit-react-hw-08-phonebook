@@ -12,6 +12,8 @@ import { Contacts } from 'pages/Contacts';
 import { LoginPage } from 'pages/LoginPage';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
+import { StyledMainContainer } from './App.styled';
+import { BackgroundImages } from './BackgroundImages/BackgroundImages';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,7 +26,7 @@ export const App = () => {
   return isRefreshing ? (
     <p>Refreshing user</p>
   ) : (
-    <div>
+    <StyledMainContainer>
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -39,6 +41,7 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    </div>
+      <BackgroundImages />
+    </StyledMainContainer>
   );
 };

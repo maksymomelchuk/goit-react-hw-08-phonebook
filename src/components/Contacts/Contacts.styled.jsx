@@ -1,34 +1,30 @@
 import styled from '@emotion/styled';
+import randomColor from 'randomcolor';
 
 const StyledContactsList = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
+  max-height: 340px;
+  overflow-y: scroll;
+  max-width: 340px;
+  padding-left: 10px;
 `;
 
 const StyledContactsElement = styled.li`
-  width: 300px;
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px 40px;
-
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
+  /* justify-content: space-between; */
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+
+  padding: 10px 0px;
+  width: 280px;
   text-align: center;
   position: relative;
 
   transition: transform linear 250ms;
-
-  background: linear-gradient(10deg, #ccc, #fff 50%);
-
-  box-shadow: 0rem 1.25rem 2.625rem 0.375rem rgba(0, 0, 0, 0.18);
-  border-radius: 0.5rem;
 
   animation-name: cardDrop;
   animation-iteration-count: 1;
@@ -41,25 +37,44 @@ const StyledContactsElement = styled.li`
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
   }
 `;
 
 const StyledDeleteButton = styled.button`
-  background: inherit;
   outline: none;
-  border: 1px solid #d3d3d3;
-  border-radius: 5px;
-  padding: 5px 15px;
+  background-color: transparent;
+  padding: 5px;
+  border: none;
   color: inherit;
   cursor: pointer;
   transition: all linear 250ms;
+  margin-left: auto;
 
   &:hover {
-    background: linear-gradient(45deg, #3b3b7a, #91617e);
-    color: #d3d3d3;
-    background-size: cover;
+    color: #fd301f;
   }
+`;
+
+export const StyledRoundLabel = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: ${randomColor};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 22px;
+  font-weight: 500;
+`;
+
+export const StyledContactDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 170px;
 `;
 
 export { StyledContactsList, StyledContactsElement, StyledDeleteButton };

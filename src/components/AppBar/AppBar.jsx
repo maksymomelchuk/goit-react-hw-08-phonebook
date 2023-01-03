@@ -10,7 +10,6 @@ export const AppBar = () => {
         padding: 20,
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 100,
       }}
     >
       <Navigation />

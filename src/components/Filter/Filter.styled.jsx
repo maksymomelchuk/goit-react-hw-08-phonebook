@@ -4,17 +4,17 @@ const StyledLabel = styled.label`
   font-size: 18px;
   font-weight: 500;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 const StyledInput = styled.input`
-  background: #e2e2e2;
   margin-left: 10px;
   padding: 5px;
   outline: none;
-  border: 1px solid #d3d3d3;
-  border-radius: 3px;
+  border: none;
+  border-bottom: 1px solid #d3d3d3;
 `;
 
 export { StyledInput, StyledLabel };

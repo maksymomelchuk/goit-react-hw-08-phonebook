@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { StyledLabel, StyledInput } from './Filter.styled';
 import { updateFilter } from 'redux/filter/filterSlice';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 export default function Filter() {
   const dispatch = useDispatch();
@@ -10,8 +11,12 @@ export default function Filter() {
   };
   return (
     <StyledLabel>
-      <p>Find contacts by name</p>
-      <StyledInput onChange={handleChange} type="text"></StyledInput>
+      <AiOutlineSearch />
+      <StyledInput
+        onChange={handleChange}
+        type="text"
+        placeholder="Search by name"
+      ></StyledInput>
     </StyledLabel>
   );
 }

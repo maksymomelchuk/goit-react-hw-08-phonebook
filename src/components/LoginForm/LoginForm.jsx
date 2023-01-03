@@ -1,4 +1,6 @@
 import { useDispatch } from 'react-redux';
+import { AiOutlineUser, AiOutlineMail } from 'react-icons/ai';
+
 import { logIn } from 'redux/auth/operations';
 import {
   StyledForm,
@@ -19,12 +21,12 @@ export const LoginForm = () => {
   return (
     <StyledForm onSubmit={handleSubmit} autoComplete="off">
       <StyledLabel>
-        Email
-        <StyledInput type="email" name="email" />
+        <AiOutlineUser />
+        <StyledInput type="email" name="email" placeholder="Email" />
       </StyledLabel>
       <StyledLabel>
-        Password
-        <StyledInput type="password" name="password" />
+        <AiOutlineMail />
+        <StyledInput type="password" name="password" placeholder="Password" />
       </StyledLabel>
       <StyledButton type="submit">Log In</StyledButton>
     </StyledForm>

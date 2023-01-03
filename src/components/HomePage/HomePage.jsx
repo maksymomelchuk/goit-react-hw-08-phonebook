@@ -1,14 +1,10 @@
-import { useAuth } from 'hooks/useAuth';
+import { Time } from 'components/Time/Time';
+import { StyledTime } from './HomePage.styled';
 
 export const HomePage = () => {
-  const { isLoggedIn, user } = useAuth();
   return (
-    <>
-      <h1 style={{ textAlign: 'center' }}>
-        {isLoggedIn
-          ? `${user.name}, have a nice day!`
-          : 'Sign up or login to start'}
-      </h1>
-    </>
+    <StyledTime>
+      <Time />
+    </StyledTime>
   );
 };

@@ -1,22 +1,33 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
-import { StyledContactsElement, StyledDeleteButton } from './Contacts.styled';
+import {
+  StyledContactsElement,
+  StyledDeleteButton,
+  StyledRoundLabel,
+  StyledContactDiv,
+} from './Contacts.styled';
+import { AiFillDelete } from 'react-icons/ai';
 
 export default function ContactsListElement({ id, name, number }) {
   const dispatch = useDispatch();
 
   return (
     <StyledContactsElement>
-      <span>
+      <StyledRoundLabel>{name[0].toUpperCase()}</StyledRoundLabel>
+      <StyledContactDiv>
+        <span>{name}</span>
+        <span>{number}</span>
+      </StyledContactDiv>
+      {/* <span style={{ display: 'flex', flexWrap: 'wrap', maxWidth: 170 }}>
         {name}: {number}
-      </span>
+      </span> */}
       <StyledDeleteButton
         onClick={() => dispatch(deleteContact(id))}
         type="button"
         id={id}
       >
-        Delete
+        <AiFillDelete style={{ fontSize: 20 }} />
       </StyledDeleteButton>
     </StyledContactsElement>
   );

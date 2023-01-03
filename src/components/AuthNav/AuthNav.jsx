@@ -1,15 +1,28 @@
 import { useAuth } from 'hooks/useAuth';
-import { StyledNavLink } from './AuthNav.styled';
+import { StyledNavLink, StyledContainerDiv } from './AuthNav.styled';
+import { TbLetterR, TbLetterL } from 'react-icons/tb';
+
+const style = { fontSize: 40 };
 
 export const AuthNav = () => {
   const { isLoggedIn } = useAuth();
 
   return (
     !isLoggedIn && (
-      <div style={{ display: 'flex', gap: 20 }}>
-        <StyledNavLink to="/register">Register</StyledNavLink>
-        <StyledNavLink to="/login">Log in</StyledNavLink>
-      </div>
+      <>
+        <StyledContainerDiv>
+          <StyledNavLink to="/register">
+            <TbLetterR style={style} />
+          </StyledNavLink>
+          <StyledNavLink to="/login">
+            <TbLetterL style={style} />
+          </StyledNavLink>
+        </StyledContainerDiv>
+        <div className="hidden">
+          <span>Login</span>
+          <span>Register</span>
+        </div>
+      </>
     )
   );
 };

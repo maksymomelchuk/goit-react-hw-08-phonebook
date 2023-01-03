@@ -21,11 +21,22 @@ export const Contacts = () => {
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
-      <h1 style={{ textAlign: 'center' }}>Phonebook</h1>
+      <h1
+        style={{
+          textAlign: 'center',
+          fontSize: 18,
+          paddingTop: 60,
+          paddingBottom: 20,
+        }}
+      >
+        Phonebook
+      </h1>
       <ContactForm />
       {contacts.length !== 0 && (
         <div>
-          <h2 style={{ textAlign: 'center' }}>Contacts</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: 10, fontSize: 18 }}>
+            Contacts
+          </h2>
           <Filter value={filter} />
           <ContactsList />
         </div>

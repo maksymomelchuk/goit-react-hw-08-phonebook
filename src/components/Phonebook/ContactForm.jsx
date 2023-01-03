@@ -3,12 +3,14 @@ import { toast } from 'react-toastify';
 
 import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { AiOutlineUser } from 'react-icons/ai';
+import { BsTelephone } from 'react-icons/bs';
 
 import {
-  StyledForm,
   StyledLabel,
   StyledInput,
   StyledButton,
+  StyledFormContacts,
 } from './ContactForm.styled';
 
 const ContactForm = () => {
@@ -32,11 +34,12 @@ const ContactForm = () => {
 
   return (
     <>
-      <StyledForm onSubmit={handlerOnSubmit}>
+      <StyledFormContacts onSubmit={handlerOnSubmit}>
         <StyledLabel>
-          Name
+          <AiOutlineUser />
           <StyledInput
             type="text"
+            placeholder="Name"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -44,9 +47,10 @@ const ContactForm = () => {
           />
         </StyledLabel>
         <StyledLabel>
-          Phone
+          <BsTelephone />
           <StyledInput
             type="tel"
+            placeholder="Number"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
@@ -54,7 +58,7 @@ const ContactForm = () => {
           />
         </StyledLabel>
         <StyledButton type="submit">Add contact</StyledButton>
-      </StyledForm>
+      </StyledFormContacts>
     </>
   );
 };

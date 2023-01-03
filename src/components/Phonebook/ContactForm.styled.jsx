@@ -8,31 +8,33 @@ const StyledForm = styled.form`
   width: 300px;
   margin: 0px auto;
   margin-bottom: 20px;
+  padding-top: 80px;
 `;
 
 const StyledLabel = styled.label`
-  align-self: flex-end;
+  display: flex;
+  align-items: center;
   font-size: 18px;
   font-weight: 500;
-  /* width: 100%; */
 `;
 
 const StyledInput = styled.input`
-  background: #e2e2e2;
   margin-left: 10px;
   padding: 5px;
   outline: none;
-  border: 1px solid #d3d3d3;
-  border-radius: 3px;
+  border: none;
+  color: black;
+  border-bottom: 1px solid #d3d3d3;
 `;
 
 const StyledButton = styled.button`
-  background: #e2e2e2;
+  background: #eee;
   outline: none;
   border: 1px solid #d3d3d3;
   border-radius: 5px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   color: black;
+  font-weight: 500;
   cursor: pointer;
   transition: all linear 250ms;
 
@@ -42,4 +44,20 @@ const StyledButton = styled.button`
   }
 `;
 
-export { StyledForm, StyledLabel, StyledInput, StyledButton };
+const StyledFormContacts = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 300px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+`;
+
+export {
+  StyledForm,
+  StyledLabel,
+  StyledInput,
+  StyledButton,
+  StyledFormContacts,
+};

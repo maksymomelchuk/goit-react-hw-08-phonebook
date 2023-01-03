@@ -1,12 +1,27 @@
 import { useAuth } from 'hooks/useAuth';
-import { StyledNavLink } from 'components/AuthNav/AuthNav.styled';
+import { StyledNav, StyledNavLink } from './Navigation.styled';
+import { IoIosContact, IoIosHome } from 'react-icons/io';
+
+const style = { fontSize: 30 };
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <nav style={{ display: 'flex', gap: 30 }}>
-      <StyledNavLink to="/">Home</StyledNavLink>
-      {isLoggedIn && <StyledNavLink to="/contacts">Contacts</StyledNavLink>}
-    </nav>
+    isLoggedIn && (
+      <>
+        <StyledNav>
+          <StyledNavLink to="/">
+            <IoIosHome style={style} />
+          </StyledNavLink>
+          <StyledNavLink to="/contacts">
+            <IoIosContact style={style} />
+          </StyledNavLink>
+        </StyledNav>
+        <div className="hidden">
+          <span>Home</span>
+          <span>Contacts</span>
+        </div>
+      </>
+    )
   );
 };
